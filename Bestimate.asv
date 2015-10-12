@@ -1,0 +1,27 @@
+function [Bfield, StrucA]= Bestimate(I_Axis_dirn, I_Y0,I_BBmag, I_Chiral)
+
+% inputs
+FRaxis=I_Axis_dirn;
+Y0=I_Y0;
+B0=I_BBmag;
+Chiral=I_Chiral;
+
+% ideal FR profile
+Z=FluxModel(data, B0, Y0);
+
+
+% noise addition
+
+
+
+
+
+
+
+
+% outputs
+Bfield=[1,1,1];
+StructA.temp1=1;
+StructA.temp2=1;
+
+end

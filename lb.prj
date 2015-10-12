@@ -1,0 +1,150 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="3028052830" file="/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb.prj" location="/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui" name="lb" preferred-package-location="/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_redistribution" preferred-package-type="package.type.app" target="target.ezdeploy.standalone" target-name="MATLAB Compiler for Standalone Applications">
+    <param.appname>lb</param.appname>
+    <param.icon>${PROJECT_ROOT}/lb_resources/icon.icns</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}/lb_resources/icon_48.png</file>
+      <file>${PROJECT_ROOT}/lb_resources/icon_32.png</file>
+      <file>${PROJECT_ROOT}/lb_resources/icon_24.png</file>
+      <file>${PROJECT_ROOT}/lb_resources/icon_16.png</file>
+    </param.icons>
+    <param.version>1.0</param.version>
+    <param.authnamewatermark />
+    <param.email />
+    <param.company />
+    <param.summary />
+    <param.description />
+    <param.screenshot>/Users/Neel/Desktop/Screen Shot 2015-02-10 at 22.38.30.png</param.screenshot>
+    <param.guid />
+    <param.installpath.string>/lb/</param.installpath.string>
+    <param.installpath.combo>option.installpath.systemwideapp</param.installpath.combo>
+    <param.logo>/Users/Neel/Desktop/FR2.png</param.logo>
+    <param.install.notes />
+    <param.intermediate>${PROJECT_ROOT}/lb/for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}/lb/for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}/lb/for_redistribution</param.output>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.embed.ctf>true</param.embed.ctf>
+    <param.server.ctf>${PROJECT_ROOT}/lb/for_testing/.ctf</param.server.ctf>
+    <param.server.readme>${PROJECT_ROOT}/lb/for_testing/readme.txt</param.server.readme>
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.required.mcr.products>
+      <item>35000</item>
+      <item>35001</item>
+    </param.required.mcr.products>
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>FRmodel_Installer_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <unset>
+      <param.version />
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
+      <param.summary />
+      <param.description />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.install.notes />
+      <param.intermediate />
+      <param.files.only />
+      <param.output />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.embed.ctf />
+      <param.server.ctf />
+      <param.server.readme />
+      <param.target.type />
+      <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
+      <param.no.mcr />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}/lb.m</file>
+    </fileset.main>
+    <fileset.resources>
+      <file>${PROJECT_ROOT}/CountSec.m</file>
+      <file>${PROJECT_ROOT}/DefineChiral.m</file>
+      <file>${PROJECT_ROOT}/FluxModel.m</file>
+      <file>${PROJECT_ROOT}/GuiStack.m</file>
+      <file>${PROJECT_ROOT}/Gui_display_results.m</file>
+      <file>${PROJECT_ROOT}/LSF_Rope.m</file>
+      <file>${PROJECT_ROOT}/MVA.m</file>
+      <file>${PROJECT_ROOT}/PlotRope.m</file>
+      <file>${PROJECT_ROOT}/Project2InvVardirn.m</file>
+      <file>${PROJECT_ROOT}/Project2Vardirn.m</file>
+      <file>${PROJECT_ROOT}/TimeAxisSet.m</file>
+      <file>${PROJECT_ROOT}/addzoomy.m</file>
+      <file>${PROJECT_ROOT}/lb.fig</file>
+      <file>${PROJECT_ROOT}/subpanel.m</file>
+      <file>${PROJECT_ROOT}/tutorialdata.mat</file>
+      <file>/Users/Neel/DC/RESEARCH/UTILITY ROUTINES/DSdate2time.m</file>
+      <file>/Users/Neel/DC/RESEARCH/UTILITY ROUTINES/DSmat2time.m</file>
+      <file>/Users/Neel/DC/RESEARCH/UTILITY ROUTINES/DStime2date.m</file>
+      <file>/Users/Neel/DC/RESEARCH/UTILITY ROUTINES/DStime2mat.m</file>
+      <file>/Users/Neel/DC/RESEARCH/UTILITY ROUTINES/daycheck.m</file>
+      <file>/Users/Neel/DC/RESEARCH/UTILITY ROUTINES/doy2ymd.m</file>
+      <file>/Users/Neel/DC/RESEARCH/UTILITY ROUTINES/ymd2doy.m</file>
+    </fileset.resources>
+    <fileset.package />
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}/lb/for_testing" name="splash.png" optional="false">/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_testing/splash.png</file>
+      <file location="${PROJECT_ROOT}/lb/for_testing" name="run_lb.sh" optional="false">/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_testing/run_lb.sh</file>
+      <file location="${PROJECT_ROOT}/lb/for_testing" name="lb.app" optional="false">/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_testing/lb.app</file>
+      <file location="${PROJECT_ROOT}/lb/for_testing" name="readme.txt" optional="true">/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_testing/readme.txt</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>/Applications/MATLAB_R2014b.app</root>
+      <toolboxes>
+        <toolbox name="fixedpoint" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>true</unix>
+      <mac>true</mac>
+      <windows>false</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.10.2</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>maci64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

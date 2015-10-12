@@ -1,0 +1,11 @@
+The GUI is pretty simple.
+1.unzip the attached file.
+2. open MATLAB and change the current folder to the files i provided.
+3. double click on 'tutorialdata.mat'  - this is only for you to understand how the gui works (you can use your own data whenever you want. 't' is time and must be in a single colm of data defined by the MATLAB 'datenum' cmd; 'tb' are the 3 comps of Bfield) 
+4. type, 'lb' in the cmd window  - a gui will appear 
+5. in the listbox on the left of the GUI highlight 't' and tb' and then click the button 'plot' - a stack plot of the bfield will appear
+(t is a single colm of time in the internal MATLAB format defined by syntax 'datenum'; tb  is 3 colms of data for Bx, By, Bz) 
+6. choose if your data is in rtn or VSO coord - normally you will use rtn 
+7. click on the button 'Const Alpha FR Fit'.
+8. drag the mouse arrow to the figure and click twice - once for the start and once for the end time.
+9. be patient (~30sec), and the rest of the GUI will be populated with the optimised results, and the figure will over-plot the FR fit.

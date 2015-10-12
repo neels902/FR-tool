@@ -1,0 +1,25 @@
+ant:
+<ant>
+  <mkdir dir="/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_redistribution" />
+  <mkdir dir="/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_testing" />
+  <mkdir dir="/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_redistribution_files_only" />
+</ant>
+mcc -o lb -W WinMain:lb -T link:exe -d '/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_testing' -v '/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb.m' 
+Compiler version: 5.2 (R2014b)
+Dependency analysis by REQUIREMENTS.
+[Warning: Adding path "/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui" to Compiler path
+instance.] 
+Parsing file "/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb.m"
+	(Referenced from: "Compiler Command Line").
+Deleting 0 temporary MEX authorization files.
+Generating file "/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_testing/readme.txt".
+Generating file "/Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_testing/run_lb.sh".
+Packaging...
+Adding custom icon /Applications/MATLAB_R2014b.app/toolbox/compiler/Resources/default_icon.icns to /Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_testing/lb.app.
+Creating the bundle...
+Copying /Applications/MATLAB_R2014b.app/toolbox/compiler/maci64/setup.app to /Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_redistribution/FRmodel_Installer_web.app.
+Copying /Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_redistribution/bundle.zip to /Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_redistribution/FRmodel_Installer_web.app/Contents/Resources/bundle.zip.
+Copying /var/folders/th/g571x3cn1fvcxs6xf58vshxh0000gn/T/splash2734863750425229278.tmp to /Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_redistribution/FRmodel_Installer_web.app/Contents/Resources/splash.png.
+Copying /Applications/MATLAB_R2014b.app/toolbox/compiler/Resources/default_icon.icns to /Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_redistribution/FRmodel_Installer_web.app/Contents/Resources/installer.icns.
+Web based installer created at /Users/Neel/DC/RESEARCH/PROJECTS/FR Gui/lb/for_redistribution/FRmodel_Installer_web.app.
+Packaging complete.
