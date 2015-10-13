@@ -12,8 +12,8 @@ arrTime=IN_time(1);
 
 %% Create complete JSON url string
 %%%NEW%%% -->
-AceBegTime=arrTime- datenum([0,0,4,00,00,00]);  % reads data prior to arrival Time
-AceEndTime=arrTime+ datenum([0,0,4,00,00,00]);
+AceBegTime=arrTime- datenum([0,0,5,00,00,00]);  % reads data prior to arrival Time
+AceEndTime=arrTime+ datenum([0,0,5,00,00,00]);
 %%%%%%%%% <--
 
 BTst='begin-time=';
@@ -30,6 +30,9 @@ ETb=datestr(AceEndTime,'HH:MM:SS');
 ET=[ETa,tempst,ETb];
 
 %% import DATA from ONLINE API
+options = weboptions;
+options.Timeout=10;
+
 WebUrl= [UrlStart,BTst,BT,ETst,ET];
 data = webread(WebUrl);
 

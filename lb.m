@@ -144,9 +144,11 @@ vars = evalin('base','who');
 if isempty(vars)
     % collect data
     InitTime=handles.Hinput.AT;
-    OUTPUT = ReadOMNIVec(InitTime);
+    Oput = ReadOMNIVec(InitTime); % data averaged in here. i.e only Ave if scrapped not manual inputs
+    IncT=datenum([0,0,0,0,12,0]);
+    OUTPUT=AveNanB(Oput,IncT);
     time=OUTPUT(:,1);
-    Bfield=OUTPUT(:,2:4);
+    Bfield=OUTPUT(:,2:4);    
     handles.hand_Stack =figure;
 else
     [x,y] = get_var_names(handles);
@@ -166,6 +168,8 @@ else
         end
     end
 end
+
+
 GuiStack(time, Bfield, handles.hand_Stack);
 handles.current_data = [time,Bfield];
 guidata(hObject, handles);
