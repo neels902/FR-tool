@@ -23,7 +23,7 @@ function varargout = lb(varargin)
 
 % Copyright 2000-2006 The MathWorks, Inc.
 
-% Last Modified by GUIDE v2.5 15-Aug-2011 11:18:45
+% Last Modified by GUIDE v2.5 13-Oct-2015 10:01:19
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -77,6 +77,8 @@ FR.MODEL.mtime=1;
 handles.FR=FR;
 handles.current_data = [1,5,5,5];
 handles.hand_Stack =999.999;
+
+handles.Hinput.AT = datenum([2010,04,25,0,0,0]); % extra var for scraping insitu
 
 % Choose default command line output for lb
 handles.output = hObject;
@@ -138,24 +140,32 @@ function plot_button_Callback(hObject, eventdata, handles, varargin)
 % hObject    handle to plot_button (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-[x,y] = get_var_names(handles);
-handles.hand_Stack =figure;
-app=evalin('base',x,';');
-app2=evalin('base',y,';');
-[r,c]=size(app);
-if c ==1
-    time=app;
-    Bfield=app2;
+vars = evalin('base','who');
+if isempty(vars)
+    % collect data
+    InitTime=handles.Hinput.AT;
+    OUTPUT = ReadOMNIVec(InitTime);
+    time=OUTPUT(:,1);
+    Bfield=OUTPUT(:,2:4);
+    handles.hand_Stack =figure;
 else
-    if c == 3
-        time=app2;
-        Bfield=app;
+    [x,y] = get_var_names(handles);
+    handles.hand_Stack =figure;
+    app=evalin('base',x,';');
+    app2=evalin('base',y,';');
+    [r,c]=size(app);
+    if c ==1
+        time=app;
+        Bfield=app2;
     else
-        error ('incorrect inputs. 1 colm for time and 3 for Bfield required')
+        if c == 3
+            time=app2;
+            Bfield=app;
+        else
+            error ('incorrect inputs. 1 colm for time and 3 for Bfield required')
+        end
     end
 end
-
 GuiStack(time, Bfield, handles.hand_Stack);
 handles.current_data = [time,Bfield];
 guidata(hObject, handles);
@@ -207,6 +217,9 @@ else
     Time=datevec(Bfield(:,1));
     BMAG= sqrt( (Bfield(:,2)).^2 + (Bfield(:,3)).^2 + (Bfield(:,4)).^2   );
     BBB=[Time,Bfield(:,2:4),BMAG];
+    
+    
+    
     handles.FR=PlotRope (BBB,handles.FR.Coord,handles.FR.colour);
 
     % display the results
@@ -773,3 +786,39 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
+
+
+
+function editCME_Callback(hObject, eventdata, handles)
+% hObject    handle to editCME (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+DateString = get(hObject,'String');
+formatIn = 'yyyy,mmm,dd,HH,MM,SS';
+handles.Hinput.AT=datenum(DateString,formatIn);
+
+% Save the handles structure.
+guidata(hObject,handles)
+
+% Hints: get(hObject,'String') returns contents of editCME as text
+%        str2double(get(hObject,'String')) returns contents of editCME as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function editCME_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to editCME (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes during object creation, after setting all properties.
+function plot_button_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to plot_button (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
